@@ -1,5 +1,5 @@
-import { Inject, inject, Injectable } from '@angular/core';
-import { from, Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ProductoGateway } from '../gateway/producto-gateway';
 import { Producto } from '../models/producto';
 
