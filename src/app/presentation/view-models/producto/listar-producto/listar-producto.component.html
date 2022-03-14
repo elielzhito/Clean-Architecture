@@ -1,0 +1,71 @@
+<div class="card">
+  <p-table
+    [value]="listaProductos"
+    dataKey="code"
+    responsiveLayout="scroll"
+    styleClass="p-mt-5"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="rowIndex">
+          N° <p-sortIcon field="rowIndex"></p-sortIcon>
+        </th>
+        <th pSortableColumn="IdProducto">
+          Producto Id <p-sortIcon field="IdProducto"></p-sortIcon>
+        </th>
+        <th pSortableColumn="IdCategoria">
+          Producto Categori <p-sortIcon field="IdCategoria"></p-sortIcon>
+        </th>
+        <th pSortableColumn="IdGrupo">
+          Producto Grupo <p-sortIcon field="IdGrupo"></p-sortIcon>
+        </th>
+        <th pSortableColumn="IdClase">
+          Producto Clase <p-sortIcon field="IdClase"></p-sortIcon>
+        </th>
+        <th pSortableColumn="Codigo">
+          Codigo <p-sortIcon field="Codigo"></p-sortIcon>
+        </th>
+        <th pSortableColumn="Denominacion">
+          Denominacion <p-sortIcon field="Denominacion"></p-sortIcon>
+        </th>
+        <th pSortableColumn="Estado">
+          Estado <p-sortIcon field="Estado"></p-sortIcon>
+        </th>
+        <th pSortableColumn="PrecioReferencial">
+          Precio Referencial <p-sortIcon field="PrecioReferencial"></p-sortIcon>
+        </th>
+        <th>Opciones</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-producto let-rowIndex="rowIndex">
+      <tr>
+        <td>{{ rowIndex + 1 }}</td>
+        <td>{{ producto.IdProducto ? producto.IdProducto : "--" }}</td>
+        <td>{{ producto.IdCategoria ? producto.IdCategoria : "--" }}</td>
+        <td>{{ producto.IdGrupo ? producto.IdGrupo : "--" }}</td>
+        <td>{{ producto.IdClase ? producto.IdClase : "--" }}</td>
+        <td>{{ producto.Codigo }}</td>
+        <td>{{ producto.Denominacion }}</td>
+        <td>{{ producto.Estado }}</td>
+        <td>{{ producto.PrecioReferencial | currency }}</td>
+        <td>
+          <button
+            pButton
+            pRipple
+            icon="pi pi-pencil"
+            class="p-button-rounded p-button-success"
+          ></button>
+          <button
+            pButton
+            pRipple
+            icon="pi pi-trash"
+            class="p-button-rounded p-button-warning"
+            (click)="deleteProduct(producto)"
+          ></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+
+<p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>

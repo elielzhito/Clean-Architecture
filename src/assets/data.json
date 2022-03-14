@@ -1,0 +1,13 @@
+[
+    {
+        "idProducto": 1,
+        "idcCategoria": 1,
+        "idcGrupo": 1,
+        "codigo": "pro-258",
+        "denominacion": "Cemento",
+        "descripcion": "asdasdasd",
+        "fechaCreacion": "2158521",
+        "fechaModificacion": "2158521",
+        "estado": true
+    }
+]
